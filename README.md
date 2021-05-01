@@ -1,4 +1,4 @@
-#Visitors are back !
+# Visitors are back !
 Visitors are people coming from outaspace !
 It's also a toy naive lib to search an inverted index :D
 It is build using the V language Vlang. In order to test this new developing language.
@@ -28,7 +28,7 @@ Let s see where it goes.
 Knowing a search library like golang Bleve search took 4 years to reach 1.0...
 Read LICENSE.txt
 
-#TODO
+# TODO
 [ ] Loads of things...
 [ ] A Decent API
 [ ] Text analysis =>Tokenizer
