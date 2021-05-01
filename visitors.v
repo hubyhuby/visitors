@@ -1,5 +1,5 @@
 //Visitors are people coming from outaspace
-//It s also a toy lib now to search an inverted index :D
+//It s also a toy lib to search an inverted index :D
 // Read LICENSE.txt
 
 module visitor
@@ -20,6 +20,17 @@ struct InvertedIndex {
     mut:
 	index map[int]IndexEntry
 	doc_db  map[int]Document
+}
+struct DocumentMatch{
+	mut:
+	doc_hash int
+	score	int  
+	fragments  string 
+}
+
+struct DocumentMatchCollection{
+	mut:
+	doc_list [] DocumentMatch
 }
 
 //Create the inverted index
@@ -64,7 +75,7 @@ pub fn(mut idx InvertedIndex) index_doc(document_name string,document_content st
 //Tokenize : transform terms into indexable token
 fn tokenize(doc string) ([]string) {
 	mut tokens := doc.split(' ') //todo split '-'
-	mut stemmed_tokens:= []string
+	mut stemmed_tokens:= []string{}
 	for mut token in tokens{
 		if token.len >2   //basic stemming = remove words smaller than 2 which usually carries less info
 		{
