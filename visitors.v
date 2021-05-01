@@ -22,8 +22,6 @@ struct InvertedIndex {
 	doc_db  map[int]Document
 }
 
-
-
 //Create the inverted index
 pub fn create_index(indexType string,indexPath string,indexMapping string)  ?InvertedIndex{
 	if indexType=='in_memory'{
@@ -65,19 +63,23 @@ pub fn(mut idx InvertedIndex) index_doc(document_name string,document_content st
 
 //Tokenize : transform terms into indexable token
 fn tokenize(doc string) ([]string) {
-	tokens := doc.split(' ')
-//	for token in tokens{
-//		todo lower case
-//	}	
-	return tokens
+	mut tokens := doc.split(' ') //todo split '-'
+	mut stemmed_tokens:= []string
+	for mut token in tokens{
+		if token.len >2   //basic stemming = remove words smaller than 2 which usually carries less info
+		{
+			stemmed_tokens<<token.to_lower()
+		}
+	}	
+	return stemmed_tokens
 }
 
 
 //Search return document hash where word is found
-pub fn(mut idx InvertedIndex) search(terms string) []Document {
-	println ("Search '$terms' :")
+pub fn(mut idx InvertedIndex) search(term string) []Document {
+	println ("Search '$term' :")
 	mut doc := [] Document{}
-	for hash in idx.index[terms.hash()].doc_hash_list
+	for hash in idx.index[term.to_lower().hash()].doc_hash_list
 	{
 		println ("  * "+idx.doc_db[hash].doc_name+": "+idx.doc_db[hash].content)
 	doc<< { doc_name :"string",content :"string"}

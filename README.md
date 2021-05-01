@@ -2,6 +2,7 @@
 Visitors are people coming from outaspace !
 It's also a toy naive lib to search an inverted index :D
 It is build using the V language Vlang. In order to test this new developing language.
+LICENSE : Read LICENSE.txt
 
 # Vlang short review as of May 2021
 
@@ -24,28 +25,28 @@ In theory that's the "silver bullet" that lets you build server side and front a
 - Ecosystem seems to be growing very fast. Active people from the C and Go world seems to be joining every day.
 - Over optimistic phrasing from the maintainer sometimes has been noted from several DEVs on the net. But hey, I can attest part of V actually works, and that s just impressing work!
 
-# NEXT IN VISITORS (season 2)
+# TODO : NEXT IN VISITORS (season 2)
 Let s see where it goes. 
 Knowing a search library like golang Bleve search took 4 years to reach 1.0...
-Read LICENSE.txt
 
-# TODO
-[ ] Loads of things...
+- [ ] Loads of things...
 
-[ ] A Decent API
+- [ ] A Decent API
 
-[ ] Text analysis =>Tokenizer
+- [ ] Text analysis =>Tokenizer
 
-[ ] Decent Querry Builder
+- [ ] Decent Querry Builder
 
-[ ] Index Mapping
+- [ ] Index Mapping
 
-[ ] TF IDF
+- [ ] TF IDF
 
-[ ] Sorting
+- [ ] Sorting
 
-[ ] Querries https://blevesearch.com/docs/Query/ 
+- [ ] Querries https://blevesearch.com/docs/Query/ 
 
-[ ] On disk index
+- [ ] On disk index
 
-[ ] 3 years of DEV & refactoring to make it work as good as Bleve in terms of Index space on disk and speed
+- [ ] https://en.wikipedia.org/wiki/Stemming
+
+- [ ]  Some 3 years of DEV & refactoring to make it work as good as Bleve in terms of Index space on disk and speed

@@ -16,7 +16,7 @@ fn main() {
 
 	mut  idx := visitor.create_index('in_memory','todo','todo') or { panic(err.msg) }
 	//Index some documents
-	idx.index_doc("DocTitle thingy","mickey donald disney word2 word3 word2000")
+	idx.index_doc("DocTitle thingy","MAJ mickey donald disney word2 word3 word2000")
 	idx.index_doc("DocTitle donald","donald disney test word1 word2 word2 word3")
 	idx.index_doc("DocTitle about mickey","mickey disney word2 word3")
 
